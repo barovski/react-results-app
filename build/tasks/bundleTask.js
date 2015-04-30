@@ -54,7 +54,7 @@ gulp.task('bundleTask', function() {
       or vendors. This is React JS, underscore, jQuery etc. We only do this when developing
       as our deployed code will be one file with all application files and vendors */
     var vendorsBundler = browserify({
-        debug: true,
+        debug: development,
         require: ['react', 'react-router']
     });
 

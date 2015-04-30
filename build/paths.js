@@ -14,7 +14,9 @@ module.exports = {
   sass: appRoot + 'css/**/*.scss',
   img: appRoot + 'img/**',
   html: appRoot + 'index.html',
+  libs: vendors + '**/*',
   outputCss: output + 'css/',
   outputJs: output + 'js/',
-  outputImg: output + 'img/'
+  outputImg: output + 'img/',
+  outputLibs: output + 'libs/'
 };

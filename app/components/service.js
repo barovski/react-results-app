@@ -10,7 +10,7 @@ module.exports =  {
 	getResults: function(){
 		return $.ajax({
 			//url: conf.url.results
-			url: '../premierLeagueFixtures.json'
+			url: './premierLeagueFixtures.json'
 		});
 	},
 	getTeams: function () {

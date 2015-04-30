@@ -27,6 +27,14 @@ a {
     }
 }
 
+%elipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
 //common
 * {
     @include boxSizing;
@@ -41,6 +49,7 @@ body {
     color: $blueMedium;
     padding-top: 50px;
     background: url "#{$imgUrl}subtle_dots.png";
+    -webkit-overflow-scrolling: scroll;
 }
 
 h1 {
@@ -97,6 +106,7 @@ main {
         float: left;
 
         &.name {
+            @extend %elipsis;
             width: 40%;
         }
 
