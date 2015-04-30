@@ -31,7 +31,7 @@ gulp.task('bundleTask', function() {
             .on('error', gutil.log)
             .pipe(source('bundle.js'))
             .pipe(gulpif(!development, streamify(uglify())))
-            .pipe(gulp.dest(paths.output))
+            .pipe(gulp.dest(paths.outputJs))
             .pipe(gulpif(development, livereload())) // It notifies livereload about a change if you use it
             .pipe(notify(function() {
                 console.log('APP bundle built in ' + (Date.now() - start) + 'ms');
@@ -66,7 +66,7 @@ gulp.task('bundleTask', function() {
         .on('error', gutil.log)
         .pipe(source('vendors.js'))
         .pipe(gulpif(!development, streamify(uglify())))
-        .pipe(gulp.dest(paths.output))
+        .pipe(gulp.dest(paths.outputJs))
         .pipe(notify(function() {
             console.log('VENDORS bundle built in ' + (Date.now() - start) + 'ms');
         }));

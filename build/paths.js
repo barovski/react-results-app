@@ -2,13 +2,19 @@ var path = require('path');
 
 var appRoot = './app/';
 var vendors = './libs/';
+var output = './dist/';
 
 module.exports = {
-  root: appRoot,
+  appRoot: appRoot,
   vendors: vendors,
+  output: output,
   main: appRoot + 'main.js',
   js: appRoot + '**/*.js',
   sassMain: appRoot + 'css/style.scss',
   sass: appRoot + 'css/**/*.scss',
-  output: './dist/',
+  img: appRoot + 'img/**',
+  html: appRoot + 'index.html',
+  outputCss: output + 'css/',
+  outputJs: output + 'js/',
+  outputImg: output + 'img/'
 };

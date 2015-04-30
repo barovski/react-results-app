@@ -1,9 +1,7 @@
 node_modules/
 .sass-cache/
 libs/
-
-dist/*
-!dist/index.html
+dist/
 
 # Windows image file caches
 Thumbs.db
