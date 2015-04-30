@@ -1,0 +1,132 @@
+//resets
+body, ul, li, ol, dd, dt, h1, h2, h3, h4, h5, h6, table, tr, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    /*border-collapse:collapse;
+    border-spacing:0;*/
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+%clearfix {
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+        font-size: 1px;
+        line-height: 1px;
+    }
+}
+
+//common
+* {
+    @include boxSizing;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    color: $blueMedium;
+    padding-top: 50px;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 30px;
+}
+
+main {
+    overflow-y: auto;
+}
+
+#loading {
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    width: 30px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    font-size: 22px;
+}
+
+.main-container {
+    width: 700px;
+    margin: auto;
+}
+
+.main-footer {
+    position: absolute;
+    height: 30px;
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $blueDark;
+    border-color: darken($blueDark, 10%);
+    font-size: 18px;
+}
+
+.round {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    color: lighten($blueMedium, 20%);
+    border-top: 2px solid lighten($blueDark, 50%);
+}
+
+.event-row {
+    @extend %clearfix;
+    border-top: 1px solid lighten($blueMedium, 50%);
+    padding: 3px;
+
+    > div {
+        float: left;
+
+        &.name {
+            width: 40%;
+        }
+
+        &.score {
+            width: 9.99%;
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+            text-align: center;
+        }
+
+        &:nth-child(4) {
+            text-align: right;
+        }
+    }
+}
+
+.navbar-inverse {
+    background-color: $blueDark;
+    border-color: darken($blueDark, 10%);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: $almostWhite;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: $red;
+    background-color: darken($blueDark, 10%);
+}
+
+.navbar-inverse .navbar-brand {
+    color: $almostWhite;
+}

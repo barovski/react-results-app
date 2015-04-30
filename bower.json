@@ -1,0 +1,9 @@
+{
+  "name": "react-results",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap-css": "~3.3.4",
+    "font-awesome-bower":"~4.3.0",
+    "jquery":"http://code.jquery.com/jquery-1.11.2.min.js"
+  }
+}
