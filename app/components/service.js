@@ -6,6 +6,7 @@ var conf = {
 };
 
 module.exports =  {
+	displayName : 'service',
 	getResults: function(){
 		return $.ajax({
 			//url: conf.url.results

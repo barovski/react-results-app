@@ -2,6 +2,7 @@ var React = require('react');
 var Common = require('./common');
 
 module.exports = React.createClass({
+    displayName : 'filters',
     handleChange: function () {
         this.props.onUserChage(
             this.refs.filterTextInput.getDOMNode().value

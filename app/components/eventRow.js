@@ -2,6 +2,7 @@ var React = require('react');
 var Common = require('./common');
 
 module.exports = React.createClass({
+	displayName : 'eventRow',
     render: function() {
         return (
 			<div className="event-row">

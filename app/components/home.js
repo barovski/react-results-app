@@ -5,6 +5,7 @@ var Filters = require('./filters');
 var Common = require('./common');
 
 module.exports = React.createClass({
+    displayName : 'home',
 	getInitialState: function() {
     	return {
     		events: [],
