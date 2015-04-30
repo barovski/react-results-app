@@ -13,12 +13,24 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
 var App = React.createClass({
+	mixins: [ Router.State ],
+	getInitialState: function() {
+		return {
+    		path: this.getPath() || '/'
+    	};
+	},
   	componentDidMount: function() {
 		//React.findDOMNode(this)
 		//Common.hideLoading();
 		var windowHeight = window.innerHeight,
 		headFootHeight = 50 + 30;//header + footer
 		$('main').height(windowHeight-headFootHeight);
+	},
+	shouldComponentUpdate: function(){
+		return this.state.path != this.getPath();
+	},
+	componentWillUpdate:function(){
+		this.setState({path:this.getPath()});
 	},
 	render: function () {
 	return (
@@ -40,8 +52,8 @@ var App = React.createClass({
 						<div id="navbar" className="navbar-collapse collapse">
 			      
 						<ul className="nav navbar-nav">
-							<li className="active"><Link to="home">Results</Link></li>
-							<li><Link to="login">League Table</Link></li>
+							<li className={this.state.path == '/' ? 'active':''}><Link to="home">Results</Link></li>
+							<li className={this.state.path === '/table' ? 'active':''}><Link to="table">League Table</Link></li>
 						</ul>
 						</div>
 						</div>
@@ -59,7 +71,7 @@ var App = React.createClass({
 
 var routes = (
   <Route name="home" path="/" handler={App}>
-    <Route name="login" handler={Table}/>
+    <Route name="table" handler={Table}/>
     <DefaultRoute handler={Home}/>
   </Route>
 );
