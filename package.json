@@ -26,6 +26,7 @@
       "react-router":"~0.13.2",
       "gulp-sourcemaps":"~1.5.2",
       "gulp-ruby-sass": "~1.0.5",
-      "gulp-autoprefixer":"~2.2.0"
+      "gulp-autoprefixer":"~2.2.0",
+      "run-sequence":"~1.1.0"
   }
 }

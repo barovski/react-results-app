@@ -14,7 +14,7 @@ var development = !(argv.ENV === "production");
 
 var paths = require('../paths');
 
-gulp.task('bundleTask', function() {
+gulp.task('bundle', function() {
     var appBundler = browserify({
         entries: [paths.main], // The entry file, normally "main.js"
         transform: [reactify], // Convert JSX style
@@ -27,7 +27,7 @@ gulp.task('bundleTask', function() {
     var rebundle = function() {
         var start = Date.now();
         console.log('Building APP bundle');
-        appBundler.bundle()
+        return appBundler.bundle()
             .on('error', gutil.log)
             .pipe(source('bundle.js'))
             .pipe(gulpif(!development, streamify(uglify())))
@@ -48,27 +48,4 @@ gulp.task('bundleTask', function() {
 
     // And trigger the initial bundling
     rebundle();
-
-
-    /* And now we have to create our third bundle, which are our external dependencies,
-      or vendors. This is React JS, underscore, jQuery etc. We only do this when developing
-      as our deployed code will be one file with all application files and vendors */
-    var vendorsBundler = browserify({
-        debug: development,
-        require: ['react', 'react-router']
-    });
-
-    /* We only run the vendor bundler once, as we do not care about changes here,
-      as there are none */
-    var start = new Date();
-    console.log('Building VENDORS bundle');
-    vendorsBundler.bundle()
-        .on('error', gutil.log)
-        .pipe(source('vendors.js'))
-        .pipe(gulpif(!development, streamify(uglify())))
-        .pipe(gulp.dest(paths.outputJs))
-        .pipe(notify(function() {
-            console.log('VENDORS bundle built in ' + (Date.now() - start) + 'ms');
-        }));
-
 });
