@@ -21,7 +21,7 @@ module.exports = React.createClass({
             teams.push(<option key={team} value={team}>{team}</option>);
         });
         return ( 
-				<div className="">	
+				<div className="filter-group">	
 					<select ref="filterTextInput" onChange={this.handleChange}>
                     {teams}
                     </select>

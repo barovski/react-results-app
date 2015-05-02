@@ -16,5 +16,13 @@ module.exports =  {
 	getTeams: function () {
 		//get teams here
 		return $.Deferred().resolve(['Chelsea', 'Manchester United', 'Manchester City', 'Arsenal', 'Liverpool']).promise();
+	},
+	getTable: function () {
+		//get table here
+		//return $.Deferred().resolve(['Chelsea', 'Manchester United', 'Manchester City', 'Arsenal', 'Liverpool']).promise();
+		return $.ajax({
+			//url: conf.url.results
+			url: './leagueTable.json'
+		});
 	}
 };

@@ -4,6 +4,9 @@
   "dependencies": {
     "bootstrap-css": "~3.3.4",
     "font-awesome-bower":"~4.3.0",
-    "jquery":"http://code.jquery.com/jquery-1.11.2.min.js"
+    "jquery":"http://code.jquery.com/jquery-1.11.2.min.js",
+    "html5shiv":"*",
+    "es5-shim":"*",
+    "respond":"*"
   }
 }

@@ -13,6 +13,7 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
 var App = React.createClass({
+	displayName: 'main',
 	mixins: [ Router.State ],
 	getInitialState: function() {
 		return {
@@ -23,8 +24,18 @@ var App = React.createClass({
 		//React.findDOMNode(this)
 		//Common.hideLoading();
 		var windowHeight = window.innerHeight,
-		headFootHeight = 50 + 30;//header + footer
-		$('main').height(windowHeight-headFootHeight);
+			headFootHeight = 50 + 30,//header + footer
+			main = $('main'),
+			respNav = $('.navbar-collapse .collapse-nav'),
+			navBar = $('#navbar');
+
+		//set content height so that the footer will be fixed on bootom on every device
+		main.height(windowHeight-headFootHeight);
+
+		//close menu on menu item click
+		respNav.on('click',function(){
+			navBar.removeClass('in');
+		})
 	},
 	shouldComponentUpdate: function(){
 		return this.state.path != this.getPath();
@@ -52,14 +63,15 @@ var App = React.createClass({
 						<div id="navbar" className="navbar-collapse collapse">
 			      
 						<ul className="nav navbar-nav">
-							<li className={this.state.path == '/' ? 'active':''}><Link to="home">Results</Link></li>
-							<li className={this.state.path === '/table' ? 'active':''}><Link to="table">League Table</Link></li>
+							<li className={this.state.path == '/' ? 'active':''}><Link className="collapse-nav" to="home">Results</Link></li>
+							<li className={this.state.path === '/table' ? 'active':''}><Link className="collapse-nav" to="table">League Table</Link></li>
 						</ul>
 						</div>
 						</div>
 					</nav>
 				</header>
 				<main>
+					<div id="dim"></div>
 					<div id="loading"><i className="fa fa-spinner fa-3"></i></div>
 					<RouteHandler/>
 				</main>

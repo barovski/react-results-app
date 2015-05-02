@@ -90,6 +90,10 @@ main {
     font-size: 18px;
 }
 
+.filter-group {
+    margin: 5px 0;
+}
+
 .round {
     text-align: center;
     padding: 5px;
@@ -101,7 +105,7 @@ main {
 .event-row {
     @extend %clearfix;
     border-top: 1px solid lighten($blueMedium, 50%);
-    padding: 3px;
+    padding: 5px;
 
     > div {
         float: left;
@@ -121,6 +125,17 @@ main {
 
         &:nth-child(4) {
             text-align: right;
+        }
+    }
+}
+
+.league-table {
+    width: 700px;
+
+    tr {
+
+        td, th {
+            padding: 5px;
         }
     }
 }
