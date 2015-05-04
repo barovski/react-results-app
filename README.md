@@ -3,9 +3,10 @@ React Soccer Results SPA
 
 
 1. clone
-2. npm install
-3. bower install
-4. run gulp server
+2. cd  {root of the project} 
+3. npm install
+4. bower install
+5. gulp server
 
 open 'http://localhost:8888' 
 (default server with browserSync. There's support for livereload too.)
