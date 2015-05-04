@@ -25,6 +25,9 @@ module.exports = React.createClass({
 				<td className="">
 					{this.props.team.goalDifference}
 				</td>
+				<td className="">
+					{this.props.team.points}
+				</td>
 			</tr>
 		);
     }

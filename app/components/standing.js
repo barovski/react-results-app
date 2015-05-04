@@ -16,12 +16,13 @@ module.exports = React.createClass({
          	<table className="league-table table-striped">
 	      		<thead>
 	      			<tr>
-	      				<th title="Position">P</th>
-	      				<th>Name</th>
-	      				<th>P</th>
+	      				<th>#</th>
+	      				<th>Team</th>
+	      				<th title="Played">P</th>
 	      				<th>F</th>
 	      				<th>A</th>
 	      				<th>GD</th>
+	      				<th title="Points">Pts</th>
 	      			</tr>
 	      		</thead>
 	      		<tbody>

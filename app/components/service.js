@@ -10,7 +10,7 @@ module.exports =  {
 	getResults: function(){
 		return $.ajax({
 			//url: conf.url.results
-			url: './premierLeagueFixtures.json'
+			url: './premierLeagueFixtures.json?v='+(new Date()).getTime()
 		});
 	},
 	getTeams: function () {
@@ -22,7 +22,7 @@ module.exports =  {
 		//return $.Deferred().resolve(['Chelsea', 'Manchester United', 'Manchester City', 'Arsenal', 'Liverpool']).promise();
 		return $.ajax({
 			//url: conf.url.results
-			url: './leagueTable.json'
+			url: './leagueTable.json?v='+(new Date()).getTime()
 		});
 	}
 };
