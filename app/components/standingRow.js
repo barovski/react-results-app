@@ -6,7 +6,7 @@ module.exports = React.createClass({
     render: function() {
         return (
 			<tr className="league-row">
-				<td className="score">
+				<td className={this.props.promotion}>
 					{this.props.team.position}
 				</td>
 				<td className="name">
