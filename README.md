@@ -8,6 +8,6 @@ React Soccer Results SPA
 4. run gulp server
 
 open 'http://localhost:8888' 
-(default server with browserSyn. There's support for livereload too.)
+(default server with browserSync. There's support for livereload too.)
 
 <h2><a href="http://web-dev-pro.com/react-results/#/" target="_blank">DEMO</a></h2>
