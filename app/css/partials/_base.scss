@@ -244,6 +244,13 @@ main {
     background-color: darken($blueDark, 10%);
 }
 
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar > .container .navbar-brand:focus,
+.navbar > .container .navbar-brand:hover,
+.navbar > .container-fluid .navbar-brand:hover {
+    color: lighten($blueMedium, 20%);
+}
+
 .navbar-inverse .navbar-brand {
     color: $blueMedium;
 }
