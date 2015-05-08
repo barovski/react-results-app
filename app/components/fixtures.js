@@ -7,7 +7,7 @@ module.exports = React.createClass({
     	var rows = [],
     		round = 1;
 
-		rows.push(<div className="round">Round {round}</div>);
+		rows.push(<div className="round">Week {round}</div>);
 
     	this.props.fixtures.forEach(function(fixture) {
             //check and add round header
