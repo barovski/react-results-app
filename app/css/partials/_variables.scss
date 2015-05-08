@@ -7,5 +7,8 @@ $sprite: $imgUrl + "sprite.png";
 $red: #E74C3C;
 $almostWhite: #ECF0F1;
 $blueLight: #3498DB;
-$blueMedium: #2980B9;
+
+$blueMedium: lighten(#2980B9, 20%);
+
+//$blueMedium: #A7D1ED;
 $blueDark: #2C3E50;
