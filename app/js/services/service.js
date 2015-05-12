@@ -17,12 +17,19 @@ module.exports =  {
 		//get teams here
 		return $.Deferred().resolve(['Chelsea', 'Manchester United', 'Manchester City', 'Arsenal', 'Liverpool']).promise();
 	},
-	getTable: function () {
+	getTable: function (id) {
 		//get table here
 		//return $.Deferred().resolve(['Chelsea', 'Manchester United', 'Manchester City', 'Arsenal', 'Liverpool']).promise();
 		return $.ajax({
 			//url: conf.url.results
-			url: './leagueTable.json?v='+(new Date()).getTime()
+			url: './leagueTable'+(id || 354) +'.json?v='+(new Date()).getTime()
 		});
+	},
+	getLeagues: function () {
+		return $.Deferred().resolve([ 
+			{id:'354',name:'Premier League'}, 
+			{id: '357', name: 'Serie A'},
+			{id:'358',name:'Primera Division'},
+			{id:'351',name:'Bundesliga'}]);
 	}
 };

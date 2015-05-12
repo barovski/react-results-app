@@ -1,5 +1,5 @@
 var React = require('react');
-var Common = require('./common');
+var Common = require('../common');
 
 module.exports = React.createClass({
     displayName : 'filters',

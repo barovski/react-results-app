@@ -27,5 +27,8 @@ module.exports =  {
 		}
 
 		return name.join(' ');
+	},
+	defer: function (action) {
+		return $.Deferred(action);
 	}
 };

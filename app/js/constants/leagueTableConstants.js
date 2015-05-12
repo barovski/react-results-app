@@ -1,0 +1,3 @@
+module.exports = {
+	TODO_CHANGE_LEAGUE:'TODO_CHANGE_LEAGUE'
+};

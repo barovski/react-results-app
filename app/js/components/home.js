@@ -1,8 +1,8 @@
 var React = require('react');
-var restApi = require('./service');
+var restApi = require('../services/service');
 var Fixtures = require('./fixtures');
 var Filters = require('./filters');
-var Common = require('./common');
+var Common = require('../common');
 
 module.exports = React.createClass({
     displayName : 'home',

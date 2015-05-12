@@ -3,7 +3,7 @@ var Home = require('./components/home.js');
 var Table = require('./components/table.js');
 var Footer = require('./components/footer.js');
 var Router = require('react-router');
-var Common = require('./components/common');
+var Common = require('./common');
 
 
 //router related
