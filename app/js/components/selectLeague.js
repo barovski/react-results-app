@@ -4,19 +4,18 @@ var LeagueTableActions = require('../actions/leagueTableActions');
 
 module.exports = React.createClass({
     displayName : 'selectLeague',
-    handleChange: function () {
+    changeLeague: function () {
         LeagueTableActions.select(this.refs.filterTextInput.getDOMNode().value);
     },
     render: function() {
-        var roundOpts = [],
-            leagues = [];
+        var leagues = [];
 
         this.props.leagues.forEach(function(league) {
             leagues.push(<option key={league.id} value={league.id}>{league.name}</option>);
         });
         return ( 
 				<div className="filter-group">	
-					<select ref="filterTextInput" onChange={this.handleChange}>
+					<select ref="filterTextInput" onChange={this.changeLeague}>
                         {leagues}
                     </select>
 				</div>

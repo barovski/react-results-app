@@ -21,8 +21,6 @@ var App = React.createClass({
     	};
 	},
   	componentDidMount: function() {
-		//React.findDOMNode(this)
-		//Common.hideLoading();
 		var windowHeight = window.innerHeight,
 			headFootHeight = 50 + 30,//header + footer
 			main = $('main'),
@@ -35,7 +33,7 @@ var App = React.createClass({
 		//close menu on menu item click
 		respNav.on('click',function(){
 			navBar.removeClass('in');
-		})
+		});
 	},
 	shouldComponentUpdate: function(){
 		return this.state.path != this.getPath();
