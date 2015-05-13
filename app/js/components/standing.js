@@ -2,7 +2,7 @@ var React = require('react');
 var restApi = require('../services/service');
 var Common = require('../common');
 var StandingRow = require('./standingRow');
-var conf = {
+var constants = {
 		//same for every league
 		promTypes: {
 			CHL:'chl',
@@ -12,7 +12,10 @@ var conf = {
 			REL:'relegation'
 		},
 		leaguePromArr: {
-			ENG: [3,4,5,6,16]//different for every league
+			"354": [3,4,5,6,16],
+			"357": [2,3,4,5,16],
+			"358": [3,4,5,6,16],
+			"351": [3,4,5,6,14]
 		}
 	};
 
@@ -22,16 +25,16 @@ module.exports = React.createClass({
     	var rows = [];
 
     	this.props.standing.forEach(function(team, index) {
-    		if (index < conf.leaguePromArr.ENG[0]) {
-    			rows.push(<StandingRow promotion={conf.promTypes.CHL} team={team} key={team.teamName} />);
-    		} else if (index >= conf.leaguePromArr.ENG[0] && index < conf.leaguePromArr.ENG[1]) {
-    			rows.push(<StandingRow promotion={conf.promTypes.CHL_Q} team={team} key={team.teamName} />);
-    		} else if (index >= conf.leaguePromArr.ENG[1] && index < conf.leaguePromArr.ENG[2]) {
-    			rows.push(<StandingRow promotion={conf.promTypes.LE} team={team} key={team.teamName} />);
-    		} else if (index >= conf.leaguePromArr.ENG[2] && index < conf.leaguePromArr.ENG[3]) {
-    			rows.push(<StandingRow promotion={conf.promTypes.LE_Q} team={team} key={team.teamName} />);
-    		} else if (index > conf.leaguePromArr.ENG[4]) {
-				rows.push(<StandingRow promotion={conf.promTypes.REL} team={team} key={team.teamName} />);
+    		if (index < constants.leaguePromArr[this.props.leagueId][0]) {
+    			rows.push(<StandingRow promotion={constants.promTypes.CHL} team={team} key={team.teamName} />);
+    		} else if (index >= constants.leaguePromArr[this.props.leagueId][0] && index < constants.leaguePromArr[this.props.leagueId][1]) {
+    			rows.push(<StandingRow promotion={constants.promTypes.CHL_Q} team={team} key={team.teamName} />);
+    		} else if (index >= constants.leaguePromArr[this.props.leagueId][1] && index < constants.leaguePromArr[this.props.leagueId][2]) {
+    			rows.push(<StandingRow promotion={constants.promTypes.LE} team={team} key={team.teamName} />);
+    		} else if (index >= constants.leaguePromArr[this.props.leagueId][2] && index < constants.leaguePromArr[this.props.leagueId][3]) {
+    			rows.push(<StandingRow promotion={constants.promTypes.LE_Q} team={team} key={team.teamName} />);
+    		} else if (index > constants.leaguePromArr[this.props.leagueId][4]) {
+				rows.push(<StandingRow promotion={constants.promTypes.REL} team={team} key={team.teamName} />);
     		} else {
     			rows.push(<StandingRow promotion={''} team={team} key={team.teamName} />);
     		}
@@ -64,7 +67,7 @@ module.exports = React.createClass({
 			      		</thead>
 			      		<tbody>
 				      		<tr>
-				      			<td className={conf.promTypes.CHL}>
+				      			<td className={constants.promTypes.CHL}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -72,7 +75,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={conf.promTypes.CHL_Q}>
+				      			<td className={constants.promTypes.CHL_Q}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -80,7 +83,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={conf.promTypes.LE}>
+				      			<td className={constants.promTypes.LE}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -88,7 +91,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={conf.promTypes.LE_Q}>
+				      			<td className={constants.promTypes.LE_Q}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -96,7 +99,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={conf.promTypes.REL}>
+				      			<td className={constants.promTypes.REL}>
 				      				&nbsp;
 				      			</td>
 				      			<td>

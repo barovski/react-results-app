@@ -11,8 +11,8 @@ module.exports = React.createClass({
         var leagues = [];
 
         this.props.leagues.forEach(function(league) {
-            leagues.push(<option key={league.id} value={league.id}>{league.name}</option>);
-        });
+            leagues.push(<option selected={league.id == this.props.leagueId} key={league.id} value={league.id}>{league.name}</option>);
+        }.bind(this));
         return ( 
 				<div className="filter-group">	
 					<select ref="filterTextInput" onChange={this.changeLeague}>

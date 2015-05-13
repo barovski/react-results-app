@@ -17,13 +17,18 @@ module.exports = React.createClass({
           Common.hideLoading();
       }.bind(this));
   },
+  _getLeagueId: function () {
+    return LeagueTableStore.getLeagueId();    
+  },
   _onChange: function() {
     this._getStandings();
+    this.setState({id: LeagueTableStore.getLeagueId()});
   },
   getInitialState: function() {
     	return {
     		standing: [],
-        leagues: []
+        leagues: [],
+        id: this._getLeagueId()
     	};
   	},
   componentWillMount: function () {
@@ -41,8 +46,8 @@ module.exports = React.createClass({
     return (
     	<div className="main-container">
       		<h1>League table</h1>
-          <SelectLeague leagues={this.state.leagues}/>
-      		<Standing standing={this.state.standing}/>
+          <SelectLeague leagueId={this.state.id} leagues={this.state.leagues}/>
+      		<Standing leagueId={this.state.id} standing={this.state.standing}/>
     	</div>
     );
   }

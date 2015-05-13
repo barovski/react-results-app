@@ -12,6 +12,10 @@ var LeagueTableStore = {
     return restApi.getLeagues();
   },
 
+  getLeagueId: function () {
+    return _id;
+  },
+
   getStandings: function() {
     return restApi.getTable(_id);
   },
@@ -26,7 +30,6 @@ var LeagueTableStore = {
 
   removeChangeListener: function(callback) {
     this.off(CHANGE_EVENT, callback);
-    _id = '354';
   },
 
   dispatcherIndex: AppDispatcher.register(function(payload) {
