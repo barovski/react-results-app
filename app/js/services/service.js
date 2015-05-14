@@ -1,3 +1,4 @@
+var Common = require('../common');
 var conf = {
 	url: {
 		results: 'http://www.football-data.org/soccerseasons/354/fixtures',
@@ -33,7 +34,12 @@ module.exports =  {
 			{id:'351',name:'Bundesliga'}]);
 	},
 	getMatchday: function(id) {
+		var that = this;
 		//[hardcoded] matchday
-		return $.Deferred().resolve(36);
+		return Common.defer(function(dfd){
+			that.getTable(id).done(function(data){
+				dfd.resolve(data.matchday);	
+			});
+		});
 	}
 };

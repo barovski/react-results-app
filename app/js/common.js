@@ -6,7 +6,6 @@ module.exports =  {
 		$('#loading').hide();
 	},
 	sortByProp: function (array, prop) {
-		debugger
 		array.sort(function (a, b) {
 			if (a[prop] > b[prop]) {
 			return 1;
