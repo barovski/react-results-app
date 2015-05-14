@@ -31,5 +31,9 @@ module.exports =  {
 			{id: '357', name: 'Serie A'},
 			{id:'358',name:'Primera Division'},
 			{id:'351',name:'Bundesliga'}]);
+	},
+	getMatchday: function(id) {
+		//[hardcoded] matchday
+		return $.Deferred().resolve(36);
 	}
 };
