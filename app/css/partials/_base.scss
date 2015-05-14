@@ -101,6 +101,7 @@ main {
         -moz-appearance: none;
         appearance: none; */
         padding: 5px;
+        margin-right: 5px;
         border: none;
         background: $blueDark;
     }
@@ -116,7 +117,7 @@ main {
 }
 
 .events-list {
-    box-shadow: 0 3px 100px 1px black;
+    box-shadow: 0 3px 200px 1px black;
 
     > div {
         &:not(.round) {

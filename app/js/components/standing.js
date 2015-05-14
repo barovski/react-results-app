@@ -62,7 +62,7 @@ module.exports = React.createClass({
 		      		<table className="table-striped">
 			      		<thead>
 			      			<tr>
-			      				<th colspan="2">Legend</th>
+			      				<th colSpan="2">Legend</th>
 			      			</tr>
 			      		</thead>
 			      		<tbody>

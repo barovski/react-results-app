@@ -10,7 +10,7 @@ module.exports = React.createClass({
         var rounds = [];
 
         for (var i = 0; i < this.props.rounds.length; i++) {
-            rounds.push(<option selected={this.props.rounds[i] == this.props.filterRoundText} key={'round_'+this.props.rounds[i]} value={this.props.rounds[i]}>{this.props.rounds[i]}</option>);    
+            rounds.push(<option defaultValue={this.props.rounds[i] == this.props.filterRoundText} key={'round'+i} value={this.props.rounds[i]}>{this.props.rounds[i]}</option>);    
         };
         return ( 
 				<select ref="filterRoundInput" onChange={this.handleChange}>
