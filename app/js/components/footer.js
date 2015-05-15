@@ -4,13 +4,13 @@ module.exports = React.createClass({
         displayName: 'footer',
         _setFooterMenuEvents: function() {
             var main = $('main'),
-                container = $('.main-container'),
+                //container = $('.main-container'),//not updating on page switch if used like var here
                 footDown = $(this.refs.footDown.getDOMNode()),
                 footUp = $(this.refs.footUp.getDOMNode());
 
             footDown.on('click', function(e) {
                 main.animate({
-                    scrollTop: container.height()
+                    scrollTop: $('.main-container').height()
                 }, 'slow');
             });
 
