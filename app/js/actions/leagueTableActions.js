@@ -1,5 +1,5 @@
 var AppDispatcher = require('../dispatcher/appDispatcher');
-var LeagueTableConstants = require('../constants/leagueTableConstants');
+var LeagueTableConstants = require('../constants/leagueTableEventConstants');
 
 module.exports = {
   select: function(val) {

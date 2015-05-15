@@ -4,6 +4,12 @@
     }
 
     .league-table {
-    	width: 100%;
-	}
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .name {
+        max-width: 133px;
+    }
 }

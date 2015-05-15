@@ -2,22 +2,7 @@ var React = require('react');
 var restApi = require('../services/service');
 var Common = require('../common');
 var StandingRow = require('./standingRow');
-var constants = {
-		//same for every league
-		promTypes: {
-			CHL:'chl',
-			CHL_Q:'chl-q',
-			LE:'le',
-			LE_Q:'le-q',
-			REL:'relegation'
-		},
-		leaguePromArr: {
-			"354": [3,4,5,6,16],
-			"357": [2,3,4,5,16],
-			"358": [3,4,5,6,16],
-			"351": [3,4,5,6,14]
-		}
-	};
+var appConstants = require('../constants/appConstants');
 
 module.exports = React.createClass({
     displayName : 'standing',
@@ -25,16 +10,16 @@ module.exports = React.createClass({
     	var rows = [];
 
     	this.props.standing.forEach(function(team, index) {
-    		if (index < constants.leaguePromArr[this.props.leagueId][0]) {
-    			rows.push(<StandingRow promotion={constants.promTypes.CHL} team={team} key={team.teamName} />);
-    		} else if (index >= constants.leaguePromArr[this.props.leagueId][0] && index < constants.leaguePromArr[this.props.leagueId][1]) {
-    			rows.push(<StandingRow promotion={constants.promTypes.CHL_Q} team={team} key={team.teamName} />);
-    		} else if (index >= constants.leaguePromArr[this.props.leagueId][1] && index < constants.leaguePromArr[this.props.leagueId][2]) {
-    			rows.push(<StandingRow promotion={constants.promTypes.LE} team={team} key={team.teamName} />);
-    		} else if (index >= constants.leaguePromArr[this.props.leagueId][2] && index < constants.leaguePromArr[this.props.leagueId][3]) {
-    			rows.push(<StandingRow promotion={constants.promTypes.LE_Q} team={team} key={team.teamName} />);
-    		} else if (index > constants.leaguePromArr[this.props.leagueId][4]) {
-				rows.push(<StandingRow promotion={constants.promTypes.REL} team={team} key={team.teamName} />);
+    		if (index < appConstants.leaguePromArr[this.props.leagueId][0]) {
+    			rows.push(<StandingRow promotion={appConstants.promTypes.CHL} team={team} key={team.teamName} />);
+    		} else if (index >= appConstants.leaguePromArr[this.props.leagueId][0] && index < appConstants.leaguePromArr[this.props.leagueId][1]) {
+    			rows.push(<StandingRow promotion={appConstants.promTypes.CHL_Q} team={team} key={team.teamName} />);
+    		} else if (index >= appConstants.leaguePromArr[this.props.leagueId][1] && index < appConstants.leaguePromArr[this.props.leagueId][2]) {
+    			rows.push(<StandingRow promotion={appConstants.promTypes.LE} team={team} key={team.teamName} />);
+    		} else if (index >= appConstants.leaguePromArr[this.props.leagueId][2] && index < appConstants.leaguePromArr[this.props.leagueId][3]) {
+    			rows.push(<StandingRow promotion={appConstants.promTypes.LE_Q} team={team} key={team.teamName} />);
+    		} else if (index > appConstants.leaguePromArr[this.props.leagueId][4]) {
+				rows.push(<StandingRow promotion={appConstants.promTypes.REL} team={team} key={team.teamName} />);
     		} else {
     			rows.push(<StandingRow promotion={''} team={team} key={team.teamName} />);
     		}
@@ -67,7 +52,7 @@ module.exports = React.createClass({
 			      		</thead>
 			      		<tbody>
 				      		<tr>
-				      			<td className={constants.promTypes.CHL}>
+				      			<td className={appConstants.promTypes.CHL}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -75,7 +60,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={constants.promTypes.CHL_Q}>
+				      			<td className={appConstants.promTypes.CHL_Q}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -83,7 +68,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={constants.promTypes.LE}>
+				      			<td className={appConstants.promTypes.LE}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -91,7 +76,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={constants.promTypes.LE_Q}>
+				      			<td className={appConstants.promTypes.LE_Q}>
 				      				&nbsp;
 				      			</td>
 				      			<td>
@@ -99,7 +84,7 @@ module.exports = React.createClass({
 				      			</td>
 			      			</tr>
 			      			<tr>
-				      			<td className={constants.promTypes.REL}>
+				      			<td className={appConstants.promTypes.REL}>
 				      				&nbsp;
 				      			</td>
 				      			<td>

@@ -1,5 +1,5 @@
 var AppDispatcher = require('../dispatcher/appDispatcher');
-var LeagueTableConstants = require('../constants/leagueTableConstants');
+var LeagueTableConstants = require('../constants/leagueTableEventConstants');
 var Events = require('../events');
 var restApi = require('../services/service');
 
