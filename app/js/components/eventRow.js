@@ -3,6 +3,26 @@ var Common = require('../common');
 
 module.exports = React.createClass({
 	displayName : 'eventRow',
+
+
+	/*componentWillReceiveProps: function() {
+        console.log("*!-event-row-cWrP"+(new Date()).getTime());
+    },
+    shouldComponentUpdate: function(nextProps, nextState) {
+        console.log("*!-event-row-sCu"+(new Date()).getTime());
+        return true;
+    },
+    componentWillUpdate: function() {
+        console.log("*!-event-row-cWu"+(new Date()).getTime());
+    },
+    componentDidUpdate: function() {
+        console.log("*!-event-row-cDu"+(new Date()).getTime());
+    },
+    componentWillUnmount: function() {
+        console.log("*!-event-row-cWunmount"+(new Date()).getTime());
+    },*/
+
+
     render: function() {
         return (
 			<div className="event-row">

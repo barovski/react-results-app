@@ -3,6 +3,24 @@ var EventRow = require('./eventRow');
 
 module.exports = React.createClass({
     displayName : 'fixtures',
+
+    /*componentWillReceiveProps: function() {
+        console.log("*!-fixtures-cWrP"+(new Date()).getTime());
+    },
+    shouldComponentUpdate: function(nextProps, nextState) {
+        console.log("*!-fixtures-sCu"+(new Date()).getTime());
+        return true;
+    },
+    componentWillUpdate: function() {
+        console.log("*!-fixtures-cWu"+(new Date()).getTime());
+    },
+    componentDidUpdate: function() {
+        console.log("*!-fixtures-cDu"+(new Date()).getTime());
+    },
+    componentWillUnmount: function() {
+        console.log("*!-fixtures-cWunmount"+(new Date()).getTime());
+    },*/
+
     render: function() {
     	var rows = [],
     		round = 1;

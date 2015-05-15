@@ -70,7 +70,26 @@ module.exports = React.createClass({
         },
         componentDidMount: function() {
             Common.showLoading();
+            //console.log("*!-home-cDmount"+(new Date()).getTime());
         },
+
+        /*componentWillReceiveProps: function() {
+            console.log("*!-home-cWrP"+(new Date()).getTime());
+        },
+        shouldComponentUpdate: function(nextProps, nextState) {
+            console.log("*!-home-sCu"+(new Date()).getTime());
+            return true;
+        },
+        componentWillUpdate: function() {
+            console.log("*!-home-cWu"+(new Date()).getTime());
+        },
+        componentDidUpdate: function() {
+            console.log("*!-home-cDu"+(new Date()).getTime());
+        },
+        componentWillUnmount: function() {
+            console.log("*!-home-cWunmount"+(new Date()).getTime());
+        },*/
+
         render: function() {
             return ( 
         		<div className="main-container">
