@@ -5,7 +5,6 @@ var Footer = require('./components/footer.js');
 var Router = require('react-router');
 var Common = require('./common');
 
-
 //router related
 var DefaultRoute = Router.DefaultRoute;
 var Link = Router.Link;
@@ -15,24 +14,34 @@ var RouteHandler = Router.RouteHandler;
 var App = React.createClass({
 	displayName: 'main',
 	mixins: [ Router.State ],
+	_winResize: function () {
+		var windowHeight = window.innerHeight,
+			headFootHeight = 50 + 30,//header + footer
+			main = $('main');
+
+			//set content height so that the footer will be fixed on bootom on every device
+		main.height(windowHeight-headFootHeight);
+	},
+	_closeResponsiveMenuOnClick: function () {
+		var respNav = $('.navbar-collapse .collapse-nav'),
+			navBar = $('#navbar');
+
+		//close menu on menu item click
+		respNav.on('click',function(){
+			navBar.removeClass('in');
+		});
+	},
 	getInitialState: function() {
 		return {
     		path: this.getPath() || '/'
     	};
 	},
   	componentDidMount: function() {
-		var windowHeight = window.innerHeight,
-			headFootHeight = 50 + 30,//header + footer
-			main = $('main'),
-			respNav = $('.navbar-collapse .collapse-nav'),
-			navBar = $('#navbar');
+  		this._winResize();
+  		this._closeResponsiveMenuOnClick();
 
-		//set content height so that the footer will be fixed on bootom on every device
-		main.height(windowHeight-headFootHeight);
-
-		//close menu on menu item click
-		respNav.on('click',function(){
-			navBar.removeClass('in');
+		window.addEventListener('resize', function(event){
+		  	this._winResize();
 		});
 	},
 	shouldComponentUpdate: function(){
