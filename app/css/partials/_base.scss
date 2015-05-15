@@ -17,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+i {
+    cursor: pointer;
+}
+
 %clearfix {
     &:after {
         display: block;
@@ -43,6 +47,16 @@ a {
 body, html {
     height: 100%;
     width: 100%;
+}
+
+.left {
+    display: inline-block;
+    float: left;
+}
+
+.right {
+    display: inline-block;
+    float: right;
 }
 
 body {
@@ -83,13 +97,20 @@ main {
 .main-footer {
     position: absolute;
     height: 30px;
-    padding: 5px;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: $blueDark;
     border-color: darken($blueDark, 10%);
     font-size: 18px;
+
+    i {
+        padding: 6px 9px 0 9px;
+
+        &:hover {
+            color: lighten($blueMedium, 20%);
+        }
+    }
 }
 
 .filter-group {
