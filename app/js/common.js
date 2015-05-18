@@ -19,7 +19,10 @@ module.exports =  {
 	    return array;
 	},
 	trimEventName: function (name) {
-		//could be custom for every name...
+		if (name && name[0] == 1) {//some WTF in response of bundesliga
+			name = name.substring(3);	
+		}
+
 		name = name ? name.split(' ') : [];
 
 		if (name.length > 2) {

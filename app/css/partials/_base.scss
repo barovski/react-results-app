@@ -77,6 +77,10 @@ main {
     overflow-y: auto;
 }
 
+select, option {
+    cursor: pointer;
+}
+
 #loading {
     display: none;
     position: absolute;
