@@ -78,7 +78,6 @@ var App = React.createClass({
 					</nav>
 				</header>
 				<main>
-					<div id="dim"></div>
 					<div id="loading"><i className="fa fa-spinner fa-3"></i></div>
 					<RouteHandler/>
 				</main>
