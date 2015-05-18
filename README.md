@@ -13,5 +13,5 @@ open 'http://localhost:8888'
 
 <h2><a href="http://web-dev-pro.com/react-results/#/" target="_blank">DEMO</a></h2>
 
-Thanks to football-data.org for the actual data
+Thanks to football-data.org for the actual data <br />
 Thanks to Rob Eisenberg and christianalfoni for build ideas
