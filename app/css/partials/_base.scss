@@ -105,12 +105,14 @@ select, option {
 .dim-widget {
     height: 100%;
     width: 100%;
+    max-width: 700px;
+    text-align: center;
     position: fixed;
-    background: rgba($blueDark, 0.6);
+    background: rgba($blueDark, 0.8);
     z-index: 3;
 
     .fa-spinner {
-        margin: 50% auto 0;
+        margin: 42% auto 0;
     }
 }
 

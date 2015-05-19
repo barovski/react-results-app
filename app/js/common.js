@@ -5,6 +5,12 @@ module.exports =  {
 	hideLoading: function () {
 		$('#loading').hide();
 	},
+	showLoadingWidget: function(id) {
+		$('#' + id).show();
+	},
+	hideLoadingWidget: function(id) {
+		$('#' + id).hide();
+	},
 	sortByProp: function (array, prop) {
 		array.sort(function (a, b) {
 			if (a[prop] > b[prop]) {

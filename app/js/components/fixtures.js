@@ -1,23 +1,26 @@
 var React = require('react');
 var EventRow = require('./eventRow');
+var LoadingWidget = require('./loadingWidget');
+var Common = require('../common');
 
 module.exports = React.createClass({
     displayName : 'fixtures',
-
     /*componentWillReceiveProps: function() {
-        console.log("*!-fixtures-cWrP"+(new Date()).getTime());
+        //console.log("*!-fixtures-cWrP"+(new Date()).getTime());
     },
     shouldComponentUpdate: function(nextProps, nextState) {
         console.log("*!-fixtures-sCu"+(new Date()).getTime());
         return true;
-    },
+    },*/
     componentWillUpdate: function() {
-        console.log("*!-fixtures-cWu"+(new Date()).getTime());
+        Common.showLoadingWidget('events-lw');
+        //console.log("*!-fixtures-cWu"+(new Date()).getTime());
     },
     componentDidUpdate: function() {
-        console.log("*!-fixtures-cDu"+(new Date()).getTime());
+        Common.hideLoadingWidget('events-lw');
+        //console.log("*!-fixtures-cDu"+(new Date()).getTime());
     },
-    componentWillUnmount: function() {
+    /*componentWillUnmount: function() {
         console.log("*!-fixtures-cWunmount"+(new Date()).getTime());
     },*/
 
@@ -62,9 +65,14 @@ module.exports = React.createClass({
         }.bind(this));
 
          return ( 
-			<div className="events-list">
-				{rows}
-			</div>
+            <div>
+                <div id="events-lw">
+                    <LoadingWidget />
+                </div>
+                <div className="events-list">
+                    {rows}
+                </div>
+            </div>
 		);
     }
 });
