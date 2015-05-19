@@ -39,5 +39,11 @@ module.exports =  {
 	},
 	defer: function (action) {
 		return $.Deferred(action);
+	},
+	colors: {
+		blueDark: '#2C3E50',
+		blueLight: '#3498DB',
+		blueMedium: '#6ab0de',
+		green: 'a1cc66'
 	}
 };

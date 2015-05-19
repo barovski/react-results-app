@@ -1,6 +1,7 @@
 var React = require('react');
 var Home = require('./components/home.js');
 var Table = require('./components/table.js');
+var Stats = require('./components/stats.js');
 var Footer = require('./components/footer.js');
 var Router = require('react-router');
 var Common = require('./common');
@@ -72,6 +73,7 @@ var App = React.createClass({
 						<ul className="nav navbar-nav">
 							<li className={this.state.path == '/' ? 'active':''}><Link className="collapse-nav" to="home">Results</Link></li>
 							<li className={this.state.path === '/table' ? 'active':''}><Link className="collapse-nav" to="table">League Table</Link></li>
+							<li className={this.state.path === '/stats' ? 'active':''}><Link className="collapse-nav" to="stats">Stats</Link></li>
 						</ul>
 						</div>
 						</div>
@@ -90,6 +92,7 @@ var App = React.createClass({
 var routes = (
   <Route name="home" path="/" handler={App}>
     <Route name="table" handler={Table}/>
+    <Route name="stats" handler={Stats}/>
     <DefaultRoute handler={Home}/>
   </Route>
 );

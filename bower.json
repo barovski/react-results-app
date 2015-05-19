@@ -7,6 +7,7 @@
     "jquery":"http://code.jquery.com/jquery-1.11.2.min.js",
     "html5shiv":"*",
     "es5-shim":"*",
-    "respond":"*"
+    "respond":"*",
+    "Chart.js":"*"
   }
 }
