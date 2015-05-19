@@ -63,7 +63,7 @@ var App = React.createClass({
 				            <span className="icon-bar"></span>
 				            <span className="icon-bar"></span>
 				          </button>
-				          <a className="navbar-brand" href="#"><i className="fa fa-home fa-3"></i></a>
+				          {/*<a className="navbar-brand" href="#"><i className="fa fa-home fa-3"></i></a>*/}
 				        </div>
 
 
