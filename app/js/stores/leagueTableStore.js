@@ -20,6 +20,10 @@ var LeagueTableStore = {
     return restApi.getTable(_id);
   },
 
+  getScorers: function() {
+    return restApi.getScorers(_id);
+  },
+
   emitChange: function() {
     this.trigger(CHANGE_EVENT);
   },

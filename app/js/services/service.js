@@ -41,5 +41,11 @@ module.exports =  {
 				dfd.resolve(data.matchday);	
 			});
 		});
+	},
+	getScorers: function (id) {
+		return $.ajax({
+			//url: conf.url.results
+			url: './goalScorers'+(id || 354) +'.json?v='+(new Date()).getTime()
+		});
 	}
 };
