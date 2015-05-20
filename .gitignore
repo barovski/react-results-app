@@ -2,6 +2,7 @@ node_modules/
 .sass-cache/
 libs/
 dist/
+*.php
 
 # Windows image file caches
 Thumbs.db
