@@ -75,7 +75,7 @@ var App = React.createClass({
 							<li className={this.state.path == '/' ? 'active':''}><Link className="collapse-nav" to="home">Results</Link></li>
 							<li className={this.state.path === '/table' ? 'active':''}><Link className="collapse-nav" to="table">League Table</Link></li>
 							<li className={this.state.path === '/goalscorers' ? 'active':''}><Link className="collapse-nav" to="goalscorers">Goalscorers</Link></li>
-							<li className={this.state.path === '/stats' ? 'active':''}><Link className="collapse-nav" to="stats">Stats</Link></li>
+							{/*<li className={this.state.path === '/stats' ? 'active':''}><Link className="collapse-nav" to="stats">Stats</Link></li>*/}
 						</ul>
 						</div>
 						</div>

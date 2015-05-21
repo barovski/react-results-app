@@ -8,10 +8,10 @@ var conf = {
 
 module.exports =  {
 	displayName : 'service',
-	getResults: function(){
+	getResults: function(id){
 		return $.ajax({
 			//url: conf.url.results
-			url: './premierLeagueFixtures.json?v='+(new Date()).getTime()
+			url: './fixtures'+(id || 354) +'.json?v='+(new Date()).getTime()
 		});
 	},
 	getTeams: function () {

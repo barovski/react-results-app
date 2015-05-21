@@ -1,8 +1,20 @@
 <?php
 $resConsts = array(
 	"RESULTS_ENG" => array(
-		"filename" => "premierLeagueFixtures.json",
+		"filename" => "fixtures354.json",
 		"url" => "http://api.football-data.org/alpha/soccerseasons/354/fixtures"
+	),
+	"RESULTS_IT" => array(
+		"filename" => "fixtures357.json",
+		"url" => "http://api.football-data.org/alpha/soccerseasons/357/fixtures"
+	),
+	"RESULTS_ESP" => array(
+		"filename" => "fixtures358.json",
+		"url" => "http://api.football-data.org/alpha/soccerseasons/358/fixtures"
+	),
+	"RESULTS_D" => array(
+		"filename" => "fixtures351.json",
+		"url" => "http://api.football-data.org/alpha/soccerseasons/351/fixtures"
 	),
 	"LT_ENG" =>  array(
 		"filename" => "leagueTable354.json",
