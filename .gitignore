@@ -3,6 +3,7 @@ node_modules/
 libs/
 dist/
 *.php
+ftp.js
 
 # Windows image file caches
 Thumbs.db
