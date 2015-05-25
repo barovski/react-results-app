@@ -1,28 +1,28 @@
 var Common = require('../common');
-var conf = {
-	url: {
-		results: 'http://www.football-data.org/soccerseasons/354/fixtures',
-		leagueTable: 'http://www.football-data.org/alpha/soccerseasons/354/leagueTable'
-	}
-};
 
 module.exports =  {
 	displayName : 'service',
 	getResults: function(id){
 		return $.ajax({
-			//url: conf.url.results
 			url: './fixtures'+(id || 354) +'.json?v='+(new Date()).getTime()
 		});
 	},
-	getTeams: function () {
-		//get teams here
-		return $.Deferred().resolve(['Chelsea', 'Manchester United', 'Manchester City', 'Arsenal', 'Liverpool']).promise();
+	getTeams: function (id) {
+		var that = this;
+			id = id || 354,
+			teams = [];
+		
+		return Common.defer(function(dfd){
+			that.getTable(id).done(function(data){
+				for (var i = 0; i < data.standing.length; i++) {
+					teams.push(Common.trimEventName(data.standing[i].teamName));
+				};
+				dfd.resolve(teams);
+			});
+		});
 	},
 	getTable: function (id) {
-		//get table here
-		//return $.Deferred().resolve(['Chelsea', 'Manchester United', 'Manchester City', 'Arsenal', 'Liverpool']).promise();
 		return $.ajax({
-			//url: conf.url.results
 			url: './leagueTable'+(id || 354) +'.json?v='+(new Date()).getTime()
 		});
 	},
@@ -35,16 +35,16 @@ module.exports =  {
 	},
 	getMatchday: function(id) {
 		var that = this;
-		//[hardcoded] matchday
+			id = id || 354;
+
 		return Common.defer(function(dfd){
 			that.getTable(id).done(function(data){
-				dfd.resolve(data.matchday);	
+				dfd.resolve(data.matchday);
 			});
 		});
 	},
 	getScorers: function (id) {
 		return $.ajax({
-			//url: conf.url.results
 			url: './goalScorers'+(id || 354) +'.json?v='+(new Date()).getTime()
 		});
 	}

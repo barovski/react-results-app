@@ -1,10 +1,10 @@
 var AppDispatcher = require('../dispatcher/appDispatcher');
-var LeagueTableConstants = require('../constants/leagueTableEventConstants');
+var LeagueConstants = require('../constants/leagueEventConstants');
 
 module.exports = {
   select: function(val) {
     AppDispatcher.handleViewAction({
-      actionType: LeagueTableConstants.TODO_CHANGE_LEAGUE,
+      actionType: LeagueConstants.TODO_CHANGE_LEAGUE,
       data: val
     });
   }

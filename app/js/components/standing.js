@@ -1,5 +1,4 @@
 var React = require('react');
-var restApi = require('../services/service');
 var Common = require('../common');
 var StandingRow = require('./standingRow');
 var appConstants = require('../constants/appConstants');

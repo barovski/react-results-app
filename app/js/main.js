@@ -19,10 +19,12 @@ var App = React.createClass({
 	_winResize: function () {
 		var windowHeight = window.innerHeight,
 			headFootHeight = 50 + 30,//header + footer
+			footer = $('.main-footer'),
 			main = $('main');
 
 			//set content height so that the footer will be fixed on bootom on every device
 		main.height(windowHeight-headFootHeight);
+		footer.fadeIn('slow');
 	},
 	_closeResponsiveMenuOnClick: function () {
 		var respNav = $('.navbar-collapse .collapse-nav'),

@@ -1,15 +1,27 @@
 var AppDispatcher = require('../dispatcher/appDispatcher');
-var LeagueTableConstants = require('../constants/leagueTableEventConstants');
+var LeagueConstants = require('../constants/leagueEventConstants');
 var Events = require('../events');
 var restApi = require('../services/service');
 
 var CHANGE_EVENT = 'change',
     _id = '354';
 
-var LeagueTableStore = {
+var LeagueStore = {
 
   getLeagues: function() {
     return restApi.getLeagues();
+  },
+
+  getFixtures: function() {
+    return restApi.getResults(_id);
+  },
+
+  getTeams: function() {
+    return restApi.getTeams(_id);
+  },
+
+  getMatchday: function() {
+    return restApi.getMatchday(_id);
   },
 
   getLeagueId: function () {
@@ -41,11 +53,11 @@ var LeagueTableStore = {
     var text;
 
     switch(action.actionType) {
-      case LeagueTableConstants.TODO_CHANGE_LEAGUE:
+      case LeagueConstants.TODO_CHANGE_LEAGUE:
         data = action.data.trim();
         if (data !== '') {
           _id = data;
-          LeagueTableStore.emitChange();
+          LeagueStore.emitChange();
         }
         break;
     }
@@ -55,6 +67,6 @@ var LeagueTableStore = {
 };
 
 //extend leagueTabelStore with Events lib (got it from durandal)
-Events().includeIn(LeagueTableStore);
+Events().includeIn(LeagueStore);
 
-module.exports = LeagueTableStore;
+module.exports = LeagueStore;

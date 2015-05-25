@@ -1,11 +1,11 @@
 var React = require('react');
 var Common = require('../common');
-var LeagueTableActions = require('../actions/leagueTableActions');
+var LeagueActions = require('../actions/leagueActions');
 
 module.exports = React.createClass({
     displayName : 'selectLeague',
     changeLeague: function () {
-        LeagueTableActions.select(this.refs.filterTextInput.getDOMNode().value);
+        LeagueActions.select(this.refs.filterTextInput.getDOMNode().value);
     },
     render: function() {
         var leagues = [];
@@ -14,11 +14,9 @@ module.exports = React.createClass({
             leagues.push(<option selected={league.id == this.props.leagueId} key={league.id} value={league.id}>{league.name}</option>);
         }.bind(this));
         return ( 
-				<div className="filter-group">	
-					<select ref="filterTextInput" onChange={this.changeLeague}>
-                        {leagues}
-                    </select>
-				</div>
+				<select ref="filterTextInput" onChange={this.changeLeague}>
+                    {leagues}
+                </select>
 			);
     }
 });

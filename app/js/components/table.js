@@ -2,27 +2,27 @@ var React = require('react');
 var Common = require('../common');
 var SelectLeague = require('./selectLeague');
 var Standing = require('./standing');
-var LeagueTableStore = require('../stores/LeagueTableStore');
+var LeagueStore = require('../stores/LeagueStore');
 
 module.exports = React.createClass({
   displayName : 'table',
   _getLeagues: function () {
-    LeagueTableStore.getLeagues().done(function(response) {
+    LeagueStore.getLeagues().done(function(response) {
           this.setState({leagues: response});
       }.bind(this));
   },
   _getStandings: function () {
-    LeagueTableStore.getStandings().done(function(response) {
+    LeagueStore.getStandings().done(function(response) {
           this.setState({standing: response.standing});
           Common.hideLoading();
       }.bind(this));
   },
   _getLeagueId: function () {
-    return LeagueTableStore.getLeagueId();    
+    return LeagueStore.getLeagueId();    
   },
   _onChange: function() {
     this._getStandings();
-    this.setState({id: LeagueTableStore.getLeagueId()});
+    this.setState({id: LeagueStore.getLeagueId()});
   },
   getInitialState: function() {
     	return {
@@ -37,17 +37,19 @@ module.exports = React.createClass({
 	},
 	componentDidMount: function () {
 		Common.showLoading();
-    LeagueTableStore.addChangeListener(this._onChange);
+    LeagueStore.addChangeListener(this._onChange);
 	},
   componentWillUnmount: function() {
-    LeagueTableStore.removeChangeListener();
+    LeagueStore.removeChangeListener();
   },
   render: function () {
     return (
     	<div className="main-container">
       		<h1>League table</h1>
-          <SelectLeague leagueId={this.state.id} leagues={this.state.leagues}/>
-      		<Standing leagueId={this.state.id} standing={this.state.standing}/>
+          <div className="filter-group">
+            <SelectLeague leagueId={this.state.id} leagues={this.state.leagues}/>
+      	  </div>
+          <Standing leagueId={this.state.id} standing={this.state.standing}/>
     	</div>
     );
   }
