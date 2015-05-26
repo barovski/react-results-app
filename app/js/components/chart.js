@@ -4,7 +4,9 @@ module.exports = React.createClass({
         displayName: 'chart',
         componentDidMount: function() {
             var ctx = document.getElementById("myChart").getContext("2d");
-            new Chart(ctx).Line(this.props.data, { responsive: true });
+            new Chart(ctx).Bar(this.props.data, { 
+                responsive: true
+             });
         },
 
         /*componentWillReceiveProps: function() {
